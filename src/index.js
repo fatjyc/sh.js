@@ -629,6 +629,20 @@ Terminal.prototype.destroy = function () {
     this.write = function () {}
 };
 
+Terminal.prototype.refreshCharacterWidth = function () {
+    this.$measureNode = document.createElement("div");
+    this.$setMeasureNodeStyles(this.$measureNode.style);
+
+    this.$measureNode.innerHTML = this.stringRepeat("X", 50);
+    this.element.appendChild(this.$measureNode);
+    this.characterWidth = this.getCharacterWidth();
+    this.element.removeChild(this.$measureNode);
+    var terminal_cjks = this.element.querySelectorAll('i.terminal_cjk');
+    for (var i = 0; i < terminal_cjks.length; i++) {
+        terminal_cjks[i].style.width = this.characterWidth * 2 + "px";
+    }
+}
+
 Terminal.prototype.refresh = function (a, k) {
     var y, f, v, z, s, u, p, q, t, x, F, A, H, L = Terminal.focus === this;
     k - a >= this.rows / 2 && (H = this.element.parentNode) && H.removeChild(this.element);
