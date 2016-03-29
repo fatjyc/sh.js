@@ -31,11 +31,11 @@ var initColors = function (colors) {
     var y = colors,
         f = [0, 95, 135, 175, 215, 255],
         v;
-        
+
     for (v = 0; 216 > v; v++) out(f[v / 36 % 6 | 0], f[v / 6 % 6 | 0], f[v % 6]);
-    
+
     for (v = 0; 24 > v; v++) f = 8 + 10 * v, out(f, f, f);
-    
+
     return y;
 };
 
@@ -733,5 +733,6 @@ var defaults = {
 
 module.exports = {
     'defaults': defaults,
-    'colors': colors
+    'colors': colors,
+    'DEFAULT_COLORS': DEFAULT_COLORS
 }

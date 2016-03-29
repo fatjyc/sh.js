@@ -651,7 +651,7 @@ Terminal.prototype.refresh = function (a, k) {
                 u = "<i class='terminal_cjk' style='width:" + (this.characterWidth * 2) + "px'>" + u + "</i>";
             v === y && (t = q, q = -1);
             q !== x && (x !== this.defAttr && (s += "</span>"), q !== this.defAttr && (s += "<span ", -1 === q ? (s += 'class="terminal-cursor" ', L ? (F = t >> 9 & 511, x = t & 511) : (F = t & 511, x = t >> 9 & 511), A = t >> 18) : (F = q & 511, x = q >> 9 & 511, A = q >> 18), s += 'style="', !L && -1 === q && (s += "outline:1px solid " + this.colors[x] + ";"), A & 1 && (Terminal.brokenBold || (s += "font-weight:bold;"), 8 > x && (x += 8)), A & 2 && (s += "text-decoration:underline;"), 256 !== F && (s += "background-color:" +
-                this.colors[F] + ";"), 257 !== x && (s += "color:" + this.colors[x] + ";"), s += '">'));
+                this.colors[F] + ";"), 257 !== x && (s += "color:" + themes.DEFAULT_COLORS[x] + ";"), s += '">'));
             switch (u) {
             case "&":
                 s += "&amp;";
