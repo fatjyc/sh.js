@@ -27,6 +27,7 @@ function isVisible(el) {
       ||  (eap = efp(rect.right - 1, rect.top + 1)) == el || el[contains](eap) == has
       ||  (eap = efp(rect.right - 1, rect.bottom - 1)) == el || el[contains](eap) == has
       ||  (eap = efp(rect.left + 1,  rect.bottom - 1)) == el || el[contains](eap) == has
+      || document.elementsFromPoint(rect.left + 1, rect.top + 1).indexOf(el) > 0
     );
 }
 
